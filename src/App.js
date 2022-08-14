@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MacroCss from 'macro-css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ //  let numbers = [1, 2, 3];
+ const [numbers, setNumbers] = React.useState([1, 2, 3]);
+ const addNum = () => {
+  numbers.push();
+  const randNum = Math.round(Math.random() * 10);
+  setNumbers([...numbers, randNum]);
+ };
+
+ return (
+  <div className='App clear'>
+   <header>
+    <h1> React Number Generator</h1>
+    <h3>
+     <b>In which I used Hook - useState() for my React study</b>
+    </h3>
+   </header>
+   <div className='wrapper d-flex '>
+    <button onClick={addNum}>Generate</button>
+    <span className='verticalStickLeft'></span>
+    <div className='numList'>
+     <ul>
+      {numbers.map((num, index) => (
+       <li key={index}>{num}</li>
+      ))}
+     </ul>
     </div>
-  );
+    <span className='verticalStickRight'></span>
+   </div>
+  </div>
+ );
 }
 
 export default App;
