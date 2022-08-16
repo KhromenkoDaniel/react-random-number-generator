@@ -16,39 +16,81 @@ header {
  background: #ffffff;
  margin: 20px 20px 0 20px;
  height: 90px;
- box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06);
+ box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.04);
  border-radius: 20px;
+
+ h1 {
+  text-align: center;
+ }
+ h3 {
+  text-align: center;
+ }
+}
+.leftBlock {
+ margin-left: 14px;
+ vertical-align: middle;
 }
 .wrapper {
  background: #ffffff;
- box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06);
+ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.06);
  border-radius: 20px;
- width: 540px;
+ width: 900px;
  height: 400px;
  margin: 70px auto;
  button {
-  margin: 25px 10px 0 10px;
+  position: relative;
+  margin: 7px 16px 7px 16px;
+
+  width: 80px;
   height: 40px;
   border-radius: 20px;
   border: 2px solid #94bbe9;
   background-color: #fff;
   color: #94bbe9;
+
+  &:hover {
+   opacity: 0.4;
+   transition: opacity 0.15s ease-in-out;
+  }
  }
  .verticalStickLeft {
   z-index: 2;
-  width: 3px;
+  width: 4px;
   height: 400px;
   background-color: #94bbe9;
  }
  .numList {
+  text-align: center;
   z-index: 1;
   flex: 1 1 auto;
+  .horizontalStick {
+   display: inline-block;
+   width: 200px;
+   height: 4px;
+   background-color: #94bbe9;
+   border-radius: 2px;
+  }
+  ul {
+   height: 320px;
+   overflow: auto;
+  }
  }
+
  .verticalStickRight {
   z-index: 2;
-  margin-right: 115px;
-  width: 3px;
+  //   margin-right: 115px;
+  width: 4px;
   height: 400px;
   background-color: #94bbe9;
+ }
+ .btnFrame {
+  margin: 20px 6px 0 6px;
+  width: 115px;
+  display: inline-block;
+  border-radius: 25px;
+  border: 2px solid #94bbe9;
+  background-color: #fff;
+  justify-content: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.06);
  }
 }
