@@ -67,7 +67,6 @@ function App() {
      <ul>
       {numbers.map((num, index) => (
        <li key={index}>
-        {/* <b> You choose {numberOption}</b> */}
         <span>{num}</span>
        </li>
       ))}
