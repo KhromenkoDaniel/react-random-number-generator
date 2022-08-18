@@ -32,10 +32,20 @@ header {
 }
 .socialMedia {
  flex-direction: column;
- align-items: flex-end;
+ align-items: flex-start;
+ position: absolute;
+ bottom: 0;
+ margin: 15px;
+ h5 {
+  margin-left: 4px;
+ }
  img {
   height: 36px;
   width: 36px;
+  opacity: 1;
+  &:hover {
+   opacity: 0.4;
+  }
  }
 }
 .wrapper {
@@ -45,7 +55,7 @@ header {
  width: 900px;
  height: 400px;
  margin: 70px auto;
-
+ position: relative;
  button {
   position: relative;
   margin: 7px 16px 7px 16px;
@@ -87,7 +97,6 @@ header {
 
  .verticalStickRight {
   z-index: 2;
-  //   margin-right: 115px;
   width: 4px;
   height: 400px;
   background-color: #94bbe9;

@@ -61,19 +61,19 @@ function App() {
        <button onClick={addNum}>Generate</button>
       </div>
      </div>
-     <div className='socialMedia d-flex '>
-      <h5>Social Media:</h5>
+     <div className='socialMedia '>
+      <h5>Me in Social Media:</h5>
       <div className='media'>
-       <a href='#'>
+       <a href='https://www.linkedin.com/in/danyil-khromenko-119116249/'>
         <img src='.\img\linkedin.png' alt='Linkedin' />
        </a>
-       <a href='#'>
+       <a href='https://github.com/KhromenkoDaniel'>
         <img src='.\img\github.png' alt='Github' />
        </a>
-       <a href='#'>
+       <a href='https://t.me/KhromenkoDaniel'>
         <img src='.\img\telegram.png' alt='Telegram' />
        </a>
-       <a href='#'>
+       <a href='https://www.instagram.com/daniel.khr18/'>
         <img src='.\img\instagram.png' alt='Instagram' />
        </a>
       </div>
