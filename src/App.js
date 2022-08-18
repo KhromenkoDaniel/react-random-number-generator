@@ -2,7 +2,9 @@ import React from 'react';
 
 function App() {
  //  let numbers = [1, 2, 3];
- const [numbers, setNumbers] = React.useState([1, 2, 3, 4]);
+ const [numbers, setNumbers] = React.useState([
+  'Make decision which diapason ',
+ ]);
  const addNum = () => {
   numbers.push();
   const randNum = Math.round(Math.random() * numberOption);
@@ -10,8 +12,8 @@ function App() {
  };
 
  const [numberOption, setNumberOption] = React.useState(10);
- const chode = (num) => {
-  numbers.push(`You choose ${num}`);
+ const choose = (num) => {
+  numbers.push(`You choose 1-${num}`);
  };
  console.log(numberOption);
  return (
@@ -29,7 +31,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(10);
-         chode(10);
+         choose(10);
         }}
        >
         1-10
@@ -39,7 +41,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(100);
-         chode(100);
+         choose(100);
         }}
        >
         1-100
@@ -49,7 +51,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(1000);
-         chode(1000);
+         choose(1000);
         }}
        >
         1-1000
@@ -57,6 +59,23 @@ function App() {
       </div>
       <div className='btnFrame'>
        <button onClick={addNum}>Generate</button>
+      </div>
+     </div>
+     <div className='socialMedia d-flex '>
+      <h5>Social Media:</h5>
+      <div className='media'>
+       <a href='#'>
+        <img src='.\img\linkedin.png' alt='Linkedin' />
+       </a>
+       <a href='#'>
+        <img src='.\img\github.png' alt='Github' />
+       </a>
+       <a href='#'>
+        <img src='.\img\telegram.png' alt='Telegram' />
+       </a>
+       <a href='#'>
+        <img src='.\img\instagram.png' alt='Instagram' />
+       </a>
       </div>
      </div>
     </div>
