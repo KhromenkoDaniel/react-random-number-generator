@@ -1,7 +1,6 @@
 import React from 'react';
 
 function App() {
- //  let numbers = [1, 2, 3];
  const [numbers, setNumbers] = React.useState([
   'Make decision which diapason ',
  ]);
