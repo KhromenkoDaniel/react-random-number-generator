@@ -1,20 +1,44 @@
 import React from 'react';
+import SocialMedia from './components/SocialMedia';
+
+const addNum = (numberOption, setNumbers, numbers) => {
+ const randNum = Math.round(Math.random() * numberOption);
+ setNumbers([...numbers, randNum]);
+};
+
+const choose = (num, numbers, setNumbers) => {
+ setNumbers([...numbers, `You choose 1-${num}`]);
+};
+
+const socialMedia = [
+ {
+  imageUrl: './img/linkedin.png',
+  href: 'https://www.linkedin.com/in/danyil-khromenko-119116249/',
+  alt: 'Linkedin',
+ },
+ {
+  imageUrl: './img/github.png',
+  href: 'https://github.com/KhromenkoDaniel',
+  alt: 'Github',
+ },
+ {
+  imageUrl: './img/telegram.png',
+  href: 'https://t.me/KhromenkoDaniel',
+  alt: 'Telegram',
+ },
+ {
+  imageUrl: './img/instagram.png',
+  href: 'https://www.instagram.com/daniel.khr18/',
+  alt: 'Instagram',
+ },
+];
 
 function App() {
+ const [numberOption, setNumberOption] = React.useState(10);
  const [numbers, setNumbers] = React.useState([
   'Make decision which diapason ',
  ]);
- const addNum = () => {
-  numbers.push();
-  const randNum = Math.round(Math.random() * numberOption);
-  setNumbers([...numbers, randNum]);
- };
 
- const [numberOption, setNumberOption] = React.useState(10);
- const choose = (num) => {
-  numbers.push(`You choose 1-${num}`);
- };
- console.log(numberOption);
  return (
   <div className='App clear'>
    <div className='wrapper d-flex '>
@@ -30,7 +54,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(10);
-         choose(10);
+         choose(10, numbers, setNumbers);
         }}
        >
         1-10
@@ -40,7 +64,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(100);
-         choose(100);
+         choose(100, numbers, setNumbers);
         }}
        >
         1-100
@@ -50,31 +74,29 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(1000);
-         choose(1000);
+         choose(1000, numbers, setNumbers);
         }}
        >
         1-1000
        </button>
       </div>
       <div className='btnFrame'>
-       <button onClick={addNum}>Generate</button>
+       <button onClick={() => addNum(numberOption, setNumbers, numbers)}>
+        Generate
+       </button>
       </div>
      </div>
      <div className='socialMedia '>
       <h5>Me in Social Media:</h5>
       <div className='media'>
-       <a href='https://www.linkedin.com/in/danyil-khromenko-119116249/'>
-        <img src='.\img\linkedin.png' alt='Linkedin' />
-       </a>
-       <a href='https://github.com/KhromenkoDaniel'>
-        <img src='.\img\github.png' alt='Github' />
-       </a>
-       <a href='https://t.me/KhromenkoDaniel'>
-        <img src='.\img\telegram.png' alt='Telegram' />
-       </a>
-       <a href='https://www.instagram.com/daniel.khr18/'>
-        <img src='.\img\instagram.png' alt='Instagram' />
-       </a>
+       {socialMedia.map((obj, index) => (
+        <SocialMedia
+         key={index}
+         imageUrl={obj.imageUrl}
+         href={obj.href}
+         alt={obj.alt}
+        />
+       ))}
       </div>
      </div>
     </div>
