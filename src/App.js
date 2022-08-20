@@ -1,15 +1,6 @@
 import React from 'react';
 import SocialMedia from './components/SocialMedia';
 
-const addNum = (numberOption, setNumbers, numbers) => {
- const randNum = Math.round(Math.random() * numberOption);
- setNumbers([...numbers, randNum]);
-};
-
-const choose = (num, numbers, setNumbers) => {
- setNumbers([...numbers, `You choose 1-${num}`]);
-};
-
 const socialMedia = [
  {
   imageUrl: './img/linkedin.png',
@@ -33,12 +24,24 @@ const socialMedia = [
  },
 ];
 
+const numberGenerator = (numberOption) => {
+ return Math.round(Math.random() * numberOption);
+};
+
 function App() {
  const [numberOption, setNumberOption] = React.useState(10);
+
+ const addNum = () => {
+  setNumbers([...numbers, numberGenerator(numberOption)]);
+ };
+
  const [numbers, setNumbers] = React.useState([
   'Make decision which diapason ',
  ]);
 
+ const choose = (num) => {
+  setNumbers([...numbers, `You choose 1-${num}`]);
+ };
  return (
   <div className='App clear'>
    <div className='wrapper d-flex '>
@@ -54,7 +57,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(10);
-         choose(10, numbers, setNumbers);
+         choose(10);
         }}
        >
         1-10
@@ -64,7 +67,7 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(100);
-         choose(100, numbers, setNumbers);
+         choose(100);
         }}
        >
         1-100
@@ -74,16 +77,14 @@ function App() {
        <button
         onClick={() => {
          setNumberOption(1000);
-         choose(1000, numbers, setNumbers);
+         choose(1000);
         }}
        >
         1-1000
        </button>
       </div>
       <div className='btnFrame'>
-       <button onClick={() => addNum(numberOption, setNumbers, numbers)}>
-        Generate
-       </button>
+       <button onClick={() => addNum(numberOption)}>Generate</button>
       </div>
      </div>
      <div className='socialMedia '>
